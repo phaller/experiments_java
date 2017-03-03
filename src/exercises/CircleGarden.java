@@ -8,4 +8,11 @@ public class CircleGarden extends Garden {
 	public double getArea() {
 		return radius * radius * Math.PI;
 	}
+	public String getShape() {
+		return "CIRCLE";
+	}
+	
+	public CircleGarden() {
+		this.id = getNewId();
+	}
 }

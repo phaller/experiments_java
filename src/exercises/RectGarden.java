@@ -9,4 +9,10 @@ public class RectGarden extends Garden {
 	public double getArea() {
 		return (length*height);
 	}
+	public String getShape() {
+		return "RECTANGLE";
+	}
+	public RectGarden() {
+		this.id = getNewId();
+	}
 }
