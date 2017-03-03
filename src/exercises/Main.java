@@ -9,9 +9,13 @@ public class Main {
 		CircleGarden g2 = new CircleGarden();
 		g2.radius = 3;
 		
+		RectGarden g3 = new RectGarden();
+		g3.length= 3;
+		g3.height= 2;
 		
 		printGarden(g1);
 		printGarden(g2);
+		printGarden(g3);
 		
 	}
 	
