@@ -1,6 +1,7 @@
 package exercises;
 
 public abstract class Garden {
+	// the cost of the fence
 	public static double fenceCost;
 	private static int lastid = 0;
 	
