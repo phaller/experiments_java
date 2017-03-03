@@ -9,8 +9,15 @@ public class Main {
 		CircleGarden g2 = new CircleGarden();
 		g2.radius = 3;
 		
-		System.out.println("Cost " + g1.getCost() + " revenue" + g1.getRevenue());
-		System.out.println("Cost " + g2.getCost() + " revenue" + g2.getRevenue());
+		
+		printGarden(g1);
+		printGarden(g2);
+		
+	}
+	
+	public static void printGarden(Garden g) {
+		System.out.println("Cost " + g.getCost() + " revenue" + g.getRevenue());
+		
 	}
 
 }

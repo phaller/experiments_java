@@ -1,11 +1,11 @@
 package exercises;
 
-public class SquareGarden {
+public class SquareGarden extends Garden {
 	public double length;
-	public double getCost() {
-		return 10 * length * 4;
+	public double getPerimeter() {
+		return length * 4;
 	}
-	public double getRevenue() {
-		return 10 * length * length;
+	public double getArea() {
+		return length * length;
 	}
 }
