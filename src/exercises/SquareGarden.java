@@ -1,5 +1,7 @@
 package exercises;
 
+import java.nio.charset.MalformedInputException;
+
 public class SquareGarden extends Garden {
 	public double length;
 	public double getPerimeter() {
@@ -20,5 +22,12 @@ public class SquareGarden extends Garden {
 		SquareGarden sq = new SquareGarden();
 		sq.length = per/4;
 		return sq;
+	}
+	public void setLength(double i) throws MalformedGarden {
+		if (i > 0)
+			this.length = i;
+		else {
+			throw new MalformedGarden();
+		}
 	}
 }

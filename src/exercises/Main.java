@@ -8,39 +8,28 @@ public class Main {
 		Garden.initLastId(100);
 		
 		SquareGarden g1 = new SquareGarden();
-		g1.length = 2;
-		
-		CircleGarden g2 = new CircleGarden();
-		g2.radius = 3;
-		Garden g4 = SquareGarden.makeByPerimeter(g2.getPerimeter());
-		g4 = SquareGarden.makeByPerimeter(100);
-		
+		SquareGarden g2 = new SquareGarden();
 		RectGarden g3 = new RectGarden();
-		g3.length= 3;
-		g3.height= 2;
-		
-		printGarden(g1);
-		printGarden(g2);
-		printGarden(g3);
-		
-		Garden.fenceCost = 20;
-		printGarden(g1);
-		printGarden(g2);
-		printGarden(g3);
-		
+		try {
+			g3.setMeasurements(10, -1);
+		}
+		catch (WrongHeight ex) {
+			System.out.println(ex.getMessage());
+		}
+		catch (WrongLength ex) {
+			System.out.println(ex.getMessage());
+		}
+	
 	}
 	
-	public static void printGarden(Garden g) {
-		//System.out.println("The shape is "+ g.getShape());
-		System.out.println("Garden ID is " + g.id);
-		if (g instanceof CircleGarden)
-			System.out.println("The shape is CIRCLE");
-		else if (g instanceof SquareGarden)
-			System.out.println("The shape is SQUARE");
-		else if (g instanceof RectGarden)
-			System.out.println("The shape is RECTANGLE");
-		System.out.println("Cost " + g.getCost() + " revenue" + g.getRevenue());
-		
+	public static void print(Garden g1) {
+		System.out.println(" Revenure ration: " + (int)g1.getRevenue()/(int)g1.getCost());
 	}
 
 }
+
+//try {
+//}
+//catch (ArithmeticException ex) {
+//System.out.println(" Failed to compute the ratio");
+//}
