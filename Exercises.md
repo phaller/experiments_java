@@ -43,3 +43,10 @@ Write a small test that checks that your implementation is correct.
   the 100'000 positions you will use and store them in an array to
   avoid measuring the execution time of `Random.nextInt()`.
 
+## Exercise 4
+
+- Find out how to sort arrays, as well as different collection
+  types. For this, study the [Java API
+  documentation](https://docs.oracle.com/javase/7/docs/api/), and
+  write small example programs.
+
