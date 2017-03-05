@@ -1,5 +1,11 @@
 package exercises;
 
+class MalformedGarden extends Exception {}
+
+class WrongHeight extends Exception {}
+
+class WrongLength extends Exception {}
+
 public class Main {
 
 	public static void main(String[] args) {
