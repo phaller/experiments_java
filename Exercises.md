@@ -13,9 +13,10 @@ Write a small test that checks that your implementation is correct.
 
 ## Exercise 2
 
-- Create at least 3 different types of collections, and initialize
-  them with 100'000 random integers. In order to generate
-  pseudo-random numbers utilize the class `java.util.Random`.
+- Create at least 3 different types of collections (e.g., `ArrayList`,
+  `LinkedList`, and `Vector`), and initialize them with 100'000 random
+  integers. In order to generate pseudo-random numbers utilize the
+  class `java.util.Random`.
 
 - Make use of a *seed value* to ensure all collections contain exactly
   the same elements.
