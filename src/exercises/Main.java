@@ -41,7 +41,7 @@ public class Main {
 		list.add(g2);
 		list.add(g3);
 
-		PrintWriter writer = null;
+		PrintWriter writer = null; // this is OK here, because of the initialization below
 		try {
 			writer = new PrintWriter(new FileWriter("Gardens.txt"));
 			for (Object element : list) {
