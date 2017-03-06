@@ -1,10 +1,20 @@
 package exercises;
 
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
 class MalformedGarden extends Exception {}
 
 class WrongHeight extends Exception {}
 
 class WrongLength extends Exception {}
+
+class Phone {
+	void callSomebody() {}
+}
 
 public class Main {
 
@@ -17,7 +27,7 @@ public class Main {
 		SquareGarden g2 = new SquareGarden();
 		RectGarden g3 = new RectGarden();
 		try {
-			g3.setMeasurements(10, -1);
+			g3.setMeasurements(10, 20);
 		}
 		catch (WrongHeight ex) {
 			System.out.println(ex.getMessage());
@@ -25,7 +35,36 @@ public class Main {
 		catch (WrongLength ex) {
 			System.out.println(ex.getMessage());
 		}
-	
+
+		ArrayList list = new ArrayList();
+		list.add(g1);
+		list.add(g2);
+		list.add(g3);
+
+		PrintWriter out = null;
+		try {
+			out = new PrintWriter(new FileWriter("Gardens.txt"));
+			for (Object element : list) {
+				Garden g = (Garden) element;
+				System.out.println("writing garden " + element);
+				out.println("Garden with shape " + g.getShape() + ", perim.: " + g.getPerimeter());
+			}
+			out.flush();
+		} catch (ClassCastException cce) {
+			System.out.println("tried to do an invalid cast");
+			cce.printStackTrace();
+		} catch (FileNotFoundException fnfe) {
+			System.out.println("Could not create file");
+			fnfe.printStackTrace();
+			System.out.println("cause: " + fnfe.getCause());
+			System.out.println("message: " + fnfe.getMessage());
+		} catch (IOException ioe) {
+			System.out.println("could not write to file");
+			System.out.println("cause: " + ioe.getCause());
+		} finally {
+			if (out != null)
+			  out.close();
+		}
 	}
 	
 	public static void print(Garden g1) {
