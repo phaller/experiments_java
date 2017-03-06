@@ -33,7 +33,7 @@ public class Main {
 			System.out.println(ex.getMessage());
 		}
 
-		ArrayList list = new ArrayList();
+		ArrayList<Garden> list = new ArrayList<Garden>();
 		list.add(g1);
 		list.add(g2);
 		list.add(g3);
@@ -41,15 +41,11 @@ public class Main {
 		PrintWriter writer = null; // this is OK here, because of the initialization below
 		try {
 			writer = new PrintWriter(new FileWriter("Gardens.txt"));
-			for (Object element : list) {
-				Garden g = (Garden) element;
-				System.out.println("writing garden " + element);
+			for (Garden g : list) {
+				System.out.println("writing garden " + g);
 				writer.println("Garden with shape " + g.getShape() + ", perim.: " + g.getPerimeter());
 			}
 			writer.flush();
-		} catch (ClassCastException cce) {
-			System.out.println("tried to do an invalid cast");
-			cce.printStackTrace();
 		} catch (FileNotFoundException fnfe) {
 			System.out.println("Could not create file");
 			fnfe.printStackTrace();
