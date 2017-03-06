@@ -41,15 +41,15 @@ public class Main {
 		list.add(g2);
 		list.add(g3);
 
-		PrintWriter out = null;
+		PrintWriter writer = null;
 		try {
-			out = new PrintWriter(new FileWriter("Gardens.txt"));
+			writer = new PrintWriter(new FileWriter("Gardens.txt"));
 			for (Object element : list) {
 				Garden g = (Garden) element;
 				System.out.println("writing garden " + element);
-				out.println("Garden with shape " + g.getShape() + ", perim.: " + g.getPerimeter());
+				writer.println("Garden with shape " + g.getShape() + ", perim.: " + g.getPerimeter());
 			}
-			out.flush();
+			writer.flush();
 		} catch (ClassCastException cce) {
 			System.out.println("tried to do an invalid cast");
 			cce.printStackTrace();
@@ -62,8 +62,8 @@ public class Main {
 			System.out.println("could not write to file");
 			System.out.println("cause: " + ioe.getCause());
 		} finally {
-			if (out != null)
-			  out.close();
+			if (writer != null)
+				writer.close();
 		}
 	}
 	
