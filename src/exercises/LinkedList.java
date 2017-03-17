@@ -24,6 +24,11 @@ public class LinkedList {
 		// find last node of current list
 				
 		Node current = this.first;
+		if (current == null) {
+			this.first = n;
+			return;
+		}
+
 		while (current.next != null) {
 			current = current.next;
 		}
@@ -36,8 +41,11 @@ public class LinkedList {
 		int counter = 0;
 		Node current = this.first;
 
-		if (current == null)
+		if (current == null) {
 			return counter;
+		} else {
+			counter++;
+		}
 
 		while (current.next != null) {
 			current = current.next;
