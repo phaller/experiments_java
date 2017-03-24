@@ -118,7 +118,10 @@ public class Person {
     			     p -> p.getGender() == Person.Sex.MALE
     			         && p.getAge() >= 18
     			         && p.getAge() <= 25,
-    			     p -> p.printPerson()
+    			     p -> {
+    			    	   String name = p.name;
+    			    	   System.out.println("Name: " + name);
+    			     }
     			);
     }
 }
