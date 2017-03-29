@@ -32,7 +32,8 @@ public class TestPerson {
 		try {
 			p.writeInfoToDataStore();
 		} catch (IOException ioe) {
-			// ???
+			// test fails if exception is caught
+			fail();
 		}
 
 		// check for correct output
