@@ -47,7 +47,6 @@ public class Person {
 		this.name = name;
 		this.birthday = born;
 		this.gender = gender;
-		//this.writerFactory = new DBWriterFactory()
     }
 
     public Person(String name, LocalDate born, Sex gender, WriterFactory writerFactory) {
@@ -70,10 +69,7 @@ public class Person {
     public void writeInfoToDataStore() throws IOException {
     	    Writer writer = null;
     	    try {
-    			writer = //new PrintWriter(new FileWriter("output.txt"));
-    					 // construct writer that connects to a DB
-    					 // new DBWriter(<create DB connection>)
-    					writerFactory.getWriter();
+    			writer = writerFactory.getWriter();
     			writer.write("" + name + ", " + getAge());
     		} catch (FileSystemNotFoundException fnfe) {
     			// TODO
