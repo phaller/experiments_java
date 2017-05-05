@@ -66,6 +66,10 @@ public class Person {
         return LocalDate.now().getYear() - birthday.getYear();
     }
 
+    public static int compareByAge(Person p1, Person p2) {
+        return p1.getAge() - p2.getAge();
+    }
+
     public void writeInfoToDataStore() throws IOException {
     	    Writer writer = null;
     	    try {
